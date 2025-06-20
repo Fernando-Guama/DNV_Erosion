@@ -13,6 +13,12 @@ Desenvolver uma API profissional de classe industrial, para calcular taxas de er
   - SQLAlchemy (banco de dados)
   - Pytest (testes)
 
+## BASE TÉCNICA - DNV-RP-O501
+- **Versão:** Edição 2015, Emendada 2021 ("Managing sand production and erosion")
+- **Seções a implementar:** 3 (Fundamentals), 4 (Empirical models), 5 (Model parameters)
+- **Componentes:** Curvas, tubos retos, tês cegos, reduções, juntas soldadas, válvulas choke, tubos flexíveis
+- **Validação:** Casos do Apêndice E (Model validation)
+
 ## Input
 ** dados de entrada de um JSON estruturado:**
 - Dados de fluido: densidade, viscosidade, velocidade
@@ -22,11 +28,11 @@ Desenvolver uma API profissional de classe industrial, para calcular taxas de er
 - Concentração de sólidos
 
 ## Output
+** dados de saída de um JSON estruturado:**
 - Taxa de erosão (mm/ano)
 - Vida útil estimada da tubulação
 - Classificação de risco
 - Recomendações de manutenção
-- Relatório detalhado (JSON/PDF)
 
 ## Modularização
 1. **auth/** - Autenticação e autorização
