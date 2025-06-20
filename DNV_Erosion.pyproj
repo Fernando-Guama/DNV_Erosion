@@ -29,6 +29,12 @@
     <Compile Include="components\tees.py" />
     <Compile Include="components\welds.py" />
     <Compile Include="DNV_Erosion.py" />
+    <Compile Include="io\input_read.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="io\output_write.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="models\bends.py" />
     <Compile Include="models\flexible_pipes.py" />
     <Compile Include="models\reducers.py" />
