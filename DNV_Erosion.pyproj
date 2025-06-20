@@ -55,6 +55,7 @@
     <Folder Include="API\" />
     <Folder Include="io\" />
     <Folder Include="models\" />
+    <Folder Include="Claude\" />
     <Folder Include="utils\" />
     <Folder Include="validators\" />
     <Folder Include="src\" />
@@ -62,6 +63,10 @@
   <ItemGroup>
     <Content Include=".gitattributes" />
     <Content Include=".gitignore" />
+    <Content Include="Claude\chat-log.md" />
+    <Content Include="Claude\context.md" />
+    <Content Include="Claude\decisions.md" />
+    <Content Include="Claude\todo.md" />
     <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
