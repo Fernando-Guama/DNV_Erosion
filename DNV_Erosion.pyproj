@@ -23,7 +23,6 @@
   <ItemGroup>
     <Compile Include="API\endpoints.py" />
     <Compile Include="API\main.py" />
-    <Compile Include="components\bends.py" />
     <Compile Include="components\flexible_pipes.py" />
     <Compile Include="components\reducers.py" />
     <Compile Include="components\straight_pipes.py" />
@@ -37,9 +36,9 @@
     <Compile Include="models\tees.py" />
     <Compile Include="models\welds.py" />
     <Compile Include="src\erosion_models.py" />
-    <Compile Include="src\fluid_properties.py" />
-    <Compile Include="src\geometry_factors.py" />
-    <Compile Include="src\material_properties.py" />
+    <Compile Include="utils\fluid_properties.py" />
+    <Compile Include="utils\geometry_factors.py" />
+    <Compile Include="utils\material_properties.py" />
     <Compile Include="utils\constants.py" />
     <Compile Include="utils\unit_conversion.py" />
     <Compile Include="validators\input_validation.py" />
