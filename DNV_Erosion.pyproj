@@ -30,6 +30,12 @@
     <Compile Include="components\tees.py" />
     <Compile Include="components\welds.py" />
     <Compile Include="DNV_Erosion.py" />
+    <Compile Include="models\bends.py" />
+    <Compile Include="models\flexible_pipes.py" />
+    <Compile Include="models\reducers.py" />
+    <Compile Include="models\straight_pipes.py" />
+    <Compile Include="models\tees.py" />
+    <Compile Include="models\welds.py" />
     <Compile Include="src\erosion_models.py" />
     <Compile Include="src\fluid_properties.py" />
     <Compile Include="src\geometry_factors.py" />
@@ -42,9 +48,16 @@
   <ItemGroup>
     <Folder Include="components\" />
     <Folder Include="API\" />
+    <Folder Include="io\" />
+    <Folder Include="models\" />
     <Folder Include="utils\" />
     <Folder Include="validators\" />
     <Folder Include="src\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
