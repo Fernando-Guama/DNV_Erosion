@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>c0d00d6d-899a-4a81-b8ab-b6da420419a4</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>DNV_Erosion.py</StartupFile>
+    <StartupFile>main.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,14 +22,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="API\endpoints.py" />
-    <Compile Include="API\main.py" />
-    <Compile Include="components\flexible_pipes.py" />
-    <Compile Include="components\reducers.py" />
-    <Compile Include="components\straight_pipes.py" />
-    <Compile Include="components\tees.py" />
-    <Compile Include="components\welds.py" />
-    <Compile Include="DNV_Erosion.py" />
+    <Compile Include="components\__init__.py" />
+    <Compile Include="main.py" />
     <Compile Include="env\Lib\site-packages\pip\_internal\build_env.py" />
     <Compile Include="env\Lib\site-packages\pip\_internal\cache.py" />
     <Compile Include="env\Lib\site-packages\pip\_internal\cli\autocompletion.py" />
@@ -441,30 +435,37 @@
     <Compile Include="env\Lib\site-packages\pip\__init__.py" />
     <Compile Include="env\Lib\site-packages\pip\__main__.py" />
     <Compile Include="env\Lib\site-packages\pip\__pip-runner__.py" />
-    <Compile Include="io\input_read.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="io\output_write.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="models\bends.py" />
-    <Compile Include="models\flexible_pipes.py" />
-    <Compile Include="models\reducers.py" />
-    <Compile Include="models\straight_pipes.py" />
-    <Compile Include="models\tees.py" />
-    <Compile Include="models\welds.py" />
-    <Compile Include="src\erosion_models.py" />
-    <Compile Include="utils\fluid_properties.py" />
-    <Compile Include="utils\geometry_factors.py" />
-    <Compile Include="utils\material_properties.py" />
-    <Compile Include="utils\constants.py" />
-    <Compile Include="utils\unit_conversion.py" />
-    <Compile Include="validators\input_validation.py" />
-    <Compile Include="validators\range_checks.py" />
+    <Compile Include="setup.py" />
+    <Compile Include="src\API\__init__.py" />
+    <Compile Include="src\auth\__init__.py" />
+    <Compile Include="src\core\calculators\erosion_calculator.py" />
+    <Compile Include="src\core\calculators\material_properties.py" />
+    <Compile Include="src\core\calculators\__init__.py" />
+    <Compile Include="src\core\config.py" />
+    <Compile Include="src\core\fluid_properties.py" />
+    <Compile Include="src\core\geometry_factors.py" />
+    <Compile Include="src\core\models\base_model.py" />
+    <Compile Include="src\core\models\choke.py" />
+    <Compile Include="src\core\models\erosion_probe.py" />
+    <Compile Include="src\core\models\flexible_pipes.py" />
+    <Compile Include="src\core\models\pipe_bend.py" />
+    <Compile Include="src\core\models\reducer.py" />
+    <Compile Include="src\core\models\straight_pipes.py" />
+    <Compile Include="src\core\models\tee.py" />
+    <Compile Include="src\core\models\welded_joint.py" />
+    <Compile Include="src\core\models\__init__.py" />
+    <Compile Include="src\core\security.py" />
+    <Compile Include="src\core\utils\constants.py" />
+    <Compile Include="src\core\utils\unit_conversion.py" />
+    <Compile Include="src\core\utils\__init__.py" />
+    <Compile Include="src\core\validators\input_validation.py" />
+    <Compile Include="src\core\validators\__init__.py" />
+    <Compile Include="src\core\__init__.py" />
+    <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="components\" />
-    <Folder Include="API\" />
+    <Folder Include="config\" />
     <Folder Include="env\" />
     <Folder Include="env\Include\" />
     <Folder Include="env\Lib\" />
@@ -578,13 +579,30 @@
     <Folder Include="env\Lib\site-packages\pip\_vendor\__pycache__\" />
     <Folder Include="env\Lib\site-packages\pip\__pycache__\" />
     <Folder Include="env\Scripts\" />
-    <Folder Include="io\" />
-    <Folder Include="models\" />
     <Folder Include="Claude\" />
-    <Folder Include="tests\" />
-    <Folder Include="utils\" />
-    <Folder Include="validators\" />
+    <Folder Include="requirements\" />
+    <Folder Include="script\" />
     <Folder Include="src\" />
+    <Folder Include="src\API\" />
+    <Folder Include="src\API\middleware\" />
+    <Folder Include="src\API\routes\" />
+    <Folder Include="src\API\schemas\" />
+    <Folder Include="src\auth\" />
+    <Folder Include="src\auth\models\" />
+    <Folder Include="src\auth\services\" />
+    <Folder Include="src\core\" />
+    <Folder Include="src\core\calculators\" />
+    <Folder Include="src\core\models\" />
+    <Folder Include="src\core\utils\" />
+    <Folder Include="src\core\validators\" />
+    <Folder Include="src\web\" />
+    <Folder Include="src\web\services\" />
+    <Folder Include="src\web\static\" />
+    <Folder Include="src\web\templates\" />
+    <Folder Include="tests\" />
+    <Folder Include="tests\fixtures\" />
+    <Folder Include="tests\integration\" />
+    <Folder Include="tests\unit\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitattributes" />
@@ -1048,6 +1066,9 @@
     <Content Include="env\Scripts\python.exe" />
     <Content Include="env\Scripts\pythonw.exe" />
     <Content Include="README.md" />
+    <Content Include="requirements\base.txt" />
+    <Content Include="requirements\development.txt" />
+    <Content Include="requirements\production.txt" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
