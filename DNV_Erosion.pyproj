@@ -12,6 +12,7 @@
     <Name>DNV_Erosion</Name>
     <RootNamespace>DNV_Erosion</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -436,14 +437,17 @@
     <Compile Include="env\Lib\site-packages\pip\__main__.py" />
     <Compile Include="env\Lib\site-packages\pip\__pip-runner__.py" />
     <Compile Include="setup.py" />
-    <Compile Include="src\API\__init__.py" />
+    <Compile Include="src\api\__init__.py" />
     <Compile Include="src\auth\__init__.py" />
     <Compile Include="src\core\calculators\erosion_calculator.py" />
     <Compile Include="src\core\calculators\material_properties.py" />
     <Compile Include="src\core\calculators\__init__.py" />
-    <Compile Include="src\core\config.py" />
-    <Compile Include="src\core\fluid_properties.py" />
-    <Compile Include="src\core\geometry_factors.py" />
+    <Compile Include="src\core\models\base\base_component.py" />
+    <Compile Include="src\core\models\base\__init__.py" />
+    <Compile Include="src\core\models\components\__init__.py" />
+    <Compile Include="src\core\utils\material_roperties.py" />
+    <Compile Include="src\core\utils\fluid_properties.py" />
+    <Compile Include="src\core\utils\geometry_factors.py" />
     <Compile Include="src\core\models\base_model.py" />
     <Compile Include="src\core\models\choke.py" />
     <Compile Include="src\core\models\erosion_probe.py" />
@@ -454,13 +458,16 @@
     <Compile Include="src\core\models\tee.py" />
     <Compile Include="src\core\models\welded_joint.py" />
     <Compile Include="src\core\models\__init__.py" />
-    <Compile Include="src\core\security.py" />
+    <Compile Include="src\core\examples\input_example.json" />
+    <Compile Include="src\core\schemas\output_schema.py" />
+    <Compile Include="src\core\schemas\input_schema.py" />
+    <Compile Include="src\core\schemas\__init__.py" />
     <Compile Include="src\core\utils\constants.py" />
     <Compile Include="src\core\utils\unit_conversion.py" />
     <Compile Include="src\core\utils\__init__.py" />
     <Compile Include="src\core\validators\input_validation.py" />
     <Compile Include="src\core\validators\__init__.py" />
-    <Compile Include="src\core\__init__.py" />
+    <Compile Include="tests\test_base_component.py" />
     <Compile Include="__init__.py" />
   </ItemGroup>
   <ItemGroup>
@@ -583,7 +590,7 @@
     <Folder Include="requirements\" />
     <Folder Include="script\" />
     <Folder Include="src\" />
-    <Folder Include="src\API\" />
+    <Folder Include="src\api\" />
     <Folder Include="src\API\middleware\" />
     <Folder Include="src\API\routes\" />
     <Folder Include="src\API\schemas\" />
@@ -593,6 +600,10 @@
     <Folder Include="src\core\" />
     <Folder Include="src\core\calculators\" />
     <Folder Include="src\core\models\" />
+    <Folder Include="src\core\examples\" />
+    <Folder Include="src\core\models\base\" />
+    <Folder Include="src\core\models\components\" />
+    <Folder Include="src\core\schemas\" />
     <Folder Include="src\core\utils\" />
     <Folder Include="src\core\validators\" />
     <Folder Include="src\web\" />
@@ -602,6 +613,7 @@
     <Folder Include="tests\" />
     <Folder Include="tests\fixtures\" />
     <Folder Include="tests\integration\" />
+    <Folder Include="tests\validation\" />
     <Folder Include="tests\unit\" />
   </ItemGroup>
   <ItemGroup>
@@ -1069,8 +1081,20 @@
     <Content Include="requirements\base.txt" />
     <Content Include="requirements\development.txt" />
     <Content Include="requirements\production.txt" />
+    <Content Include="src\core\examples\output_example.json" />
+    <Content Include="tests\fixtures\straight_pipe_test.json" />
+    <Content Include="tests\fixtures\pipe_bend_test.json" />
   </ItemGroup>
   <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>3.7</Version>
+      <Description>env1 (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
       <Version>3.13</Version>
